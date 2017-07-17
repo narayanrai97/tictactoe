@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <style>
+            table {
+                width: 300px;
+                border: 1px solid black;
+            }
+
+            td {
+                height: 100px;
+                width: 100px;
+                border: 1px solid black;
+                text-align: center;
+                font-size: 50px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <table>
+            <tr>
+                <td id="00" onclick="add('00');"></td>
+                <td id="01" onclick="add('01');"></td>
+                <td id="02" onclick="add('02');"></td>
+            </tr>
+            <tr>
+                <td id="10" onclick="add('10')"></td>
+                <td id="11" onclick="add('11');"></td>
+                <td id="12" onclick="add('12');"></td>
+            </tr>
+            <tr>
+                <td id="20" onclick="add('20')"></td>
+                <td id="21" onclick="add('21');"></td>
+                <td id="22" onclick="add('22');"></td>
+            </tr>
+        </table>
+        <script type="text/javascript">
+            var player = "X"
+
+            function add(id){
+                var node = document.getElementById(id);
+                if(node.innerHTML == ""){
+                    var text = document.createTextNode(player);
+                    node.appendChild(text);
+                    if(winX()){
+                        alert("X won!");
+                    }
+                    if (winO()){
+                        alert("O won!");
+                    }
+                    if (player == "X"){
+                        player = "O";
+                    } else {
+                        player = "X"
+                    }
+                }
+            }
+
+            function winX(){
+
+            }
+
+            function winO(){
+
+            }
+        </script>
+    </body>
+</html>
